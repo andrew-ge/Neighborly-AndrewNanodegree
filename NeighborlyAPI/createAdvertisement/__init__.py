@@ -4,9 +4,9 @@ import os
 
 def main(req: func.HttpRequest) -> func.HttpResponse:
 
-    #request = req.get_json()
-    print ('your request is: ', (req.get_body()).decode('utf-8'))
-    request = None
+    #print("Get into the funciton with ", req.params['data'])
+    request = req.get_json()
+    #print ('json part of your request is: ',request)
     if request:
         try:
             url = os.environ['myMongoDbconnectionString']
