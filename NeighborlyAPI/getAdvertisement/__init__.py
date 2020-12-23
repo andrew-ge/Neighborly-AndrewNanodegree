@@ -20,11 +20,12 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
             database = client['neighborlydB']
             collection = database['advertisements']
 
-            query = {'_id': ObjectId(id)}
-            result = collection.find_one(query)
+            query = {'_id':id}
+            result = collection.find_one(query) # note: the id is just a string in db due to import
             if result is None:
-                query = {'_id':id}
-                result = collection.find_one(query) # note: the id is just a string in db due to import
+                query = {'_id': ObjectId(id)}
+                result = collection.find_one(query)
+            
             print("----------result--------")
 
             result = dumps(result)
