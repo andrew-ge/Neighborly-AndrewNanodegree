@@ -14,7 +14,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
             database = client['neighborlydB']
             collection = database['advertisements']
 
-            rec_id1 = collection.insert_one(request)  #no need to use eval as json can be imported
+            rec_id1 = collection.insert_one(eval(request))  #no need to use eval as json can be imported
 
             return func.HttpResponse(req.get_body())
 

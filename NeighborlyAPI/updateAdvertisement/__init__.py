@@ -16,7 +16,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
             collection = database['advertisements']
             
             filter_query = {'_id': ObjectId(id)}
-            update_query = {"$set": (request)} #not able to use eval
+            update_query = {"$set": eval(request)} #not able to use eval
             rec_id1 = collection.update_one(filter_query, update_query)
             if (rec_id1.modified_count!=1):
                 filter_query = {'_id': id}

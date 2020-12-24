@@ -2,13 +2,17 @@ import logging.config
 import os
 from flask import Flask, Blueprint, request, jsonify, render_template, redirect, url_for
 from flask_bootstrap import Bootstrap
+#this is local file
 import settings
+import sys
 import requests
 import json
 from feedgen.feed import FeedGenerator
 from flask import make_response
 from urllib.parse import urljoin
 from werkzeug.contrib.atom import AtomFeed
+
+
 
 app = Flask(__name__)
 Bootstrap(app)
@@ -46,13 +50,16 @@ def rss():
     fg = FeedGenerator()
     fg.title('Feed title')
     fg.description('Feed Description')
-    fg.link(href='https://neighborly-client-v1.azurewebsites.net/')
-    
+    # Orignal link
+    #fg.link(href='https://neighborly-client-v1.azurewebsites.net/')
+
+    #Andrew's link
+    fg.link(href='https://myneighborlyapiv1.azurewebsites.net/')
 
     response = requests.get(settings.API_URL + '/getAdvertisements')
     ads = response.json()
 
-    for a in ads: 
+    for a in ads:
         fe = fg.add_entry()
         fe.title(a.title)
         fe.description(a.description)
@@ -63,6 +70,8 @@ def rss():
 
 @app.route('/')
 def home():
+
+    print(settings.API_URL + '/getAdvertisements')
     response = requests.get(settings.API_URL + '/getAdvertisements')
     response2 = requests.get(settings.API_URL + '/getPosts')
 
