@@ -7,6 +7,7 @@ ENV AzureWebJobsScriptRoot=/home/site/wwwroot \
 
 ENV myMongoDbconnectionString=mongodb://cosmosdbneighborly:L46FpRk7Wy2FBSgSHluBRoObcNbVUE8FjvoWNbVfdJKTrSsevKWasB2jpY4mEb7TGrO4oBJAz0mqnFmZnZTE4w==@cosmosdbneighborly.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000&appName=@cosmosdbneighborly@
 
+
 COPY requirements.txt /
 RUN pip install -r /requirements.txt
 
