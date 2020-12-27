@@ -103,6 +103,8 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+NeighborlyFrontEnd/myvenv/
+NeighborlyAPI/.venv/
 
 # Spyder project settings
 .spyderproject
