@@ -5,8 +5,10 @@ import azure.functions as func
 
 def main(event: func.EventGridEvent):
 
-	#logging.info(f'Function triggered to process a message: {event.get_body()}') 
-    logging.info(f'EnqueuedTimeUtc =  {event.enqueued_time}')
+
+    
+    logging.info("Function triggered to process a message: ",event.get_body())
+    logging.info('EnqueuedTimeUtc = ', event.enqueued_time)
     logging.info('SequenceNumber =  {event.sequence_number}')   
     logging.info('Offset = %d', event.offset)
 
