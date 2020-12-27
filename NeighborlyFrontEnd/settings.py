@@ -21,3 +21,8 @@ API_VERSION = 'v1'
 # ------- For production -------
 # where APP_NAME is your Azure Function App name
 API_URL="https://myneighborlyapiv1.azurewebsites.net/api"
+
+
+#-----------For AKS deployment------
+# API_URL="http://20.62.143.220/api"
+# This works

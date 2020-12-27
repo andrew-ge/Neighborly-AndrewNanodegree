@@ -5,8 +5,8 @@
       "type": "eventGridTrigger",
       "name": "event",
       "direction": "in",
-	  "eventHubName": "testhub", 
-	  "connection": "Endpoint=sb://udacityneighborly.servicebus.windows.net/;SharedAccessKeyName=allpolicy;SharedAccessKey=LOxUOkN13xN038T1VoSsmaTt4s7vq/+VCzduS5/nH9A=;EntityPath=testhub"
+	  "eventHubName": "neighborlyhub", 
+	  "connection": "Endpoint=sb://andrewneighborly.servicebus.windows.net/;SharedAccessKeyName=rootpolicy;SharedAccessKey=X4HfUTyhyzD0WuzxKSW1Ptj16wLhJCvcTpLbZhEpix4=;EntityPath=neighborlyhub"
     }
   ]
 }
